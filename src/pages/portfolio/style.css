@@ -1,0 +1,110 @@
+.po_items_ho {
+    column-width: 15em;
+    -moz-column-width: 15em;
+    -webkit-column-width: 15em;
+    column-gap: 4rem;
+    -moz-column-gap: 4rem;
+    -webkit-column-gap: 4rem;
+}
+
+.po_item {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.407); /* Glassmorphism background */
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10%;
+    transition: 0.3s ease;
+    font-size: 0;
+    height: 300px;
+    backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+    box-shadow: 0 4px 6px rgba(180, 180, 180, 0.1), 
+                0 8px 16px rgba(180, 180, 180, 0.1),
+                0 12px 24px rgba(180, 180, 180, 0.1); /* Subtle shadow effect */
+    position: relative;
+    overflow: hidden;
+}
+
+.po_item .po_img {
+    max-width: 100%;
+    border-radius: 10%;
+    height: 200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+    overflow: hidden;
+}
+
+.po_img img {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+    border-radius: 7px;
+}
+
+.po_item .po_desc {
+    width: 100%;
+    height: min-content;
+    padding: 10px;
+    font-size: 1rem;
+    justify-content: center;
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+.po_item .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.3); /* Glassmorphism background */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+    font-size: 20px;
+    border-radius: 10%;
+}
+
+.po_item:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+.po_item:hover .po_img {
+    box-shadow: none;
+}
+
+.po_item:hover img {
+    transform: scale(1.3);
+}
+
+.po_item:hover .po_desc {
+    opacity: 0; /* Hide description on hover */
+}
+
+.po_item:hover .content {
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    opacity: 1;
+    color: var(--bg-color);
+}
+
+.po_item .content a {
+    background: var(--bg-color);
+    border: solid 1px var(--text-color);
+    padding: 4px 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.po_item .content a:hover {
+    text-decoration: none;
+}
